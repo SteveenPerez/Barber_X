@@ -1,0 +1,711 @@
+/* Sobrescrituras adaptables de las tres hojas previas: reorganizan panel, módulos cliente y administración.
+   Se carga al final para que sus puntos de quiebre prevalezcan sin duplicar la estructura base. */
+/* Ajusta el panel y sus columnas para tabletas y ventanas medianas. */
+@media (max-width: 850px) {
+  .app-shell {
+    grid-template-columns: 70px minmax(0, 1fr);
+  }
+
+  .sidebar {
+    align-items: center;
+    padding: 20px 9px;
+  }
+
+  .brand {
+    padding: 2px 0 30px;
+  }
+
+  .brand-name,
+  .section-label,
+  .nav-text,
+  .shop-card {
+    display: none;
+  }
+
+  .nav-item {
+    justify-content: center;
+    padding: 12px 8px;
+  }
+
+  .sidebar-bottom {
+    width: 100%;
+    padding: 15px 0 0;
+    text-align: center;
+  }
+
+  .topbar {
+    padding: 0 25px;
+  }
+
+  .content {
+    padding: 32px 25px 45px;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .annex-tabs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .barber-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-welcome {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* Reorganiza navegación, formularios y tarjetas para pantallas de celular. */
+@media (max-width: 620px) {
+  .app-shell {
+    display: block;
+    padding-bottom: 62px;
+  }
+
+  .sidebar {
+    position: fixed;
+    z-index: 3;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 62px;
+    flex-direction: row;
+    justify-content: center;
+    padding: 5px 12px;
+    border-top: 1px solid var(--line);
+    border-right: 0;
+  }
+
+  .brand,
+  .section-label,
+  .sidebar-bottom {
+    display: none;
+  }
+
+  .sidebar nav {
+    display: flex;
+    width: 100%;
+    max-width: 350px;
+    justify-content: space-around;
+  }
+
+  .nav-item {
+    width: auto;
+    min-width: 0;
+    flex: 1 1 0;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .nav-icon {
+    width: auto;
+  }
+
+  .topbar {
+    min-height: 62px;
+    padding: 0 17px;
+  }
+
+  .content {
+    padding: 27px 16px 35px;
+  }
+
+  .pac-document {
+    padding: 20px 16px;
+  }
+
+  .pac-metadata div {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 23px;
+  }
+
+  .annex-diagram-heading {
+    flex-direction: column;
+  }
+
+  .annex-tabs {
+    grid-template-columns: 1fr;
+  }
+
+  .page-heading .primary-button {
+    width: 100%;
+  }
+
+  .add-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .add-actions .primary-button {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .stats {
+    gap: 8px;
+    margin-bottom: 23px;
+  }
+
+  .stat-card {
+    min-height: 88px;
+    padding: 12px 10px;
+  }
+
+  .stat-label {
+    font-size: 9px;
+  }
+
+  .stat-value {
+    font-size: 23px;
+  }
+
+  .stat-icon {
+    display: none;
+  }
+
+  .toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .search-wrap {
+    width: 100%;
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 660px;
+  }
+
+  .appointments-table {
+    min-width: 1080px;
+  }
+
+  .client-appointments-table {
+    min-width: 780px;
+  }
+
+  .report-table {
+    min-width: 680px;
+  }
+
+  .services-table {
+    min-width: 850px;
+  }
+
+  .appointment-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .appointment-toolbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .appointment-filters {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .appointment-filters .search-wrap {
+    width: 100%;
+  }
+
+  .filter-label {
+    margin-left: 2px;
+  }
+
+  .appointment-filter {
+    flex: 1;
+  }
+
+  .service-fields {
+    grid-template-columns: 1fr;
+  }
+
+  .service-description {
+    grid-column: auto;
+  }
+
+  th,
+  td {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+
+  .profile-copy {
+    display: none;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  .modal {
+    padding: 21px;
+  }
+
+  .login-card {
+    padding: 25px;
+  }
+
+  .client-content {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .barber-content {
+    padding-right: 18px;
+    padding-left: 18px;
+  }
+
+  .barber-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-stats,
+  .dashboard-grid,
+  .appointment-insights,
+  .report-chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-welcome {
+    gap: 14px;
+    margin-bottom: 21px;
+  }
+
+  .dashboard-welcome-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .dashboard-stat {
+    min-height: 100px;
+  }
+
+  .dashboard-card {
+    padding: 17px;
+  }
+
+  .client-registrations-card .dashboard-card-heading {
+    flex-direction: column;
+  }
+
+  .client-chart-controls {
+    align-self: flex-start;
+  }
+
+  .client-chart-summary {
+    margin-top: 2px;
+  }
+
+  .dashboard-chart {
+    min-height: 0;
+  }
+
+  .status-chart-layout {
+    justify-content: space-evenly;
+    gap: 12px;
+  }
+
+  .status-donut {
+    width: 112px;
+    height: 112px;
+  }
+
+  .status-donut::before {
+    width: 82px;
+    height: 82px;
+  }
+
+  .status-chart-legend {
+    min-width: 120px;
+  }
+
+  .appointment-insights,
+  .report-chart-grid {
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .client-header {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .client-nav {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .client-tab {
+    flex: 1;
+  }
+
+  .client-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 28px 20px 17px;
+  }
+
+  .client-contact-links {
+    justify-content: flex-start;
+  }
+
+  .client-footer-copy {
+    grid-column: auto;
+  }
+
+  .booking-form,
+  .manual-editor,
+  .video-editor,
+  .video-viewer {
+    padding: 16px;
+  }
+
+  .booking-form {
+    padding: 18px;
+  }
+
+  .booking-details {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-calendar,
+  .booking-availability {
+    gap: 11px;
+  }
+
+  .calendar-days,
+  .calendar-weekdays {
+    gap: 4px;
+  }
+
+  .calendar-day {
+    min-height: 36px;
+  }
+
+  .booking-time,
+  .slot-period {
+    min-height: 38px;
+    font-size: 10px;
+  }
+
+  .booking-message {
+    padding: 25px 20px;
+  }
+}
+
+/* En móviles muy estrechos, el body deja de imponer su ancho mínimo para evitar desplazamiento lateral. */
+/* Reduce espacios para dispositivos con anchos de pantalla muy pequeños. */
+@media (max-width: 340px) {
+  body {
+    min-width: 0;
+  }
+}
+
+/* Respeta la preferencia del sistema para reducir o eliminar animaciones. */
+@media (prefers-reduced-motion: reduce) {
+  .booking-calendar-enter .calendar-day,
+  .booking-times-enter .booking-time,
+  .client-chart-bar-shape,
+  .services-grid-enter .service-card {
+    animation: none;
+  }
+
+  .calendar-nav,
+  .calendar-day,
+  .slot-period,
+  .booking-time,
+  .service-card,
+  .service-art,
+  .service-art-tool,
+  .service-icon,
+  .service-book {
+    transition: none;
+  }
+}
+
+/* Formularios, indicadores y listados del registro de errores y sugerencias. */
+.quality-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.quality-pac-link,
+.quality-editor {
+  margin-bottom: 18px;
+}
+
+.quality-pac-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.quality-pac-link h2,
+.quality-editor h2,
+.quality-records-section h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.quality-pac-link p:not(.eyebrow) {
+  max-width: 650px;
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.quality-editor {
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background:
+    radial-gradient(ellipse at top left, rgb(215 174 99 / 7%), transparent 48%),
+    var(--panel);
+  box-shadow: 0 16px 36px rgb(0 0 0 / 14%);
+}
+
+.quality-form-intro {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid var(--line);
+}
+
+.quality-form-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  place-items: center;
+  border: 1px solid #6f5b38;
+  border-radius: 13px;
+  color: var(--gold-light);
+  background: linear-gradient(145deg, #393020, #211e18);
+  font-size: 19px;
+}
+
+.quality-form-intro h2,
+.quality-form-intro h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.quality-form-intro p:not(.eyebrow) {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.quality-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.quality-field-wide {
+  grid-column: 1 / -1;
+}
+
+.quality-form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.quality-form-note {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.quality-records-section {
+  margin-top: 24px;
+}
+
+.quality-records-table {
+  min-width: 900px;
+}
+
+.quality-records-section .table-wrap {
+  overflow-x: auto;
+  margin-top: 14px;
+}
+
+.quality-source {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.quality-severity {
+  display: inline-flex;
+  padding: 4px 8px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.quality-severity-alta,
+.quality-severity-critica {
+  border-color: #70443d;
+  color: #f0aaa0;
+}
+
+.quality-detail {
+  min-width: 180px;
+  max-width: 390px;
+}
+
+.quality-detail summary {
+  color: var(--gold-light);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.quality-detail p {
+  margin: 8px 0 0;
+  color: #cecdc6;
+  font-size: 12px;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.quality-status {
+  min-width: 125px;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  color: var(--text);
+  background: var(--panel-soft);
+}
+
+.suggestion-form {
+  display: grid;
+  gap: 0;
+  max-width: 850px;
+  padding: 22px;
+  border: 1px solid #3a372e;
+  border-radius: 15px;
+  background:
+    radial-gradient(ellipse at top left, rgb(215 174 99 / 8%), transparent 50%),
+    linear-gradient(145deg, #1d1d19, #171715);
+  box-shadow: 0 20px 50px rgb(0 0 0 / 18%), inset 0 1px 0 rgb(255 255 255 / 3%);
+}
+
+.suggestion-form .quality-form-grid {
+  margin: 4px 0 20px;
+}
+
+.suggestion-form .quality-form-intro {
+  margin-bottom: 20px;
+}
+
+.suggestion-form .field-hint {
+  margin-top: 6px;
+}
+
+.suggestion-form .quality-form-actions .primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+}
+
+.suggestion-form .quality-form-actions .primary-button span {
+  font-size: 15px;
+}
+
+.suggestion-form textarea,
+.quality-editor textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  outline: none;
+  color: var(--text);
+  background: var(--panel-soft);
+  resize: vertical;
+}
+
+.suggestion-form textarea:focus,
+.quality-editor textarea:focus {
+  border-color: #9e8049;
+  box-shadow: 0 0 0 3px #d7ae6318;
+}
+
+/* Estos ajustes adicionales compactan los indicadores de calidad en ventanas medianas. */
+/* Adapta las áreas agregadas de anexos y calidad a ventanas más estrechas. */
+@media (max-width: 1000px) {
+  .quality-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* En teléfonos se apilan los campos y enlaces del módulo de calidad. */
+/* Apila campos y enlaces de calidad para que se puedan usar en teléfonos. */
+@media (max-width: 620px) {
+  .quality-pac-link {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .quality-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quality-field-wide {
+    grid-column: auto;
+  }
+
+  .quality-stats {
+    gap: 9px;
+  }
+
+  .quality-editor,
+  .suggestion-form {
+    padding: 15px;
+  }
+
+  .quality-form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
